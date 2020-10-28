@@ -41,9 +41,9 @@ export class SingleSentRequestComponent implements OnInit {
         return;
       }
       Object.entries(data).forEach(([id, value]) => this.requestsOfFriend.push({requestId: id, ...value}));
-      const [del] = this.requestsOfFriend.filter(user => user.id === this.userId);
+      const [request] = this.requestsOfFriend.filter(user => user.id === this.userId);
 
-      this.receivedRequestsService.removeReceivedRequest(this.sentRequest.id, del.requestId).subscribe(() => {
+      this.receivedRequestsService.removeReceivedRequest(this.sentRequest.id, request.requestId).subscribe(() => {
         this.refreshService.$refresh.next();
       });
       this.sentRequestsService.cancelSentRequest(this.userId, this.sentRequest.sentRequestId).subscribe(() => {
