@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+#pageView {
+  display: flex;
+}
+
+#secondBlock {
+  margin-left: 200px;
+}
+
+h6 {
+  font-family: 'Caveat', cursive;
+  color: #2a115b;
+  font-size: 20px;
+  padding: 5px;
+  margin-left: 50px;
+}
+
+.btnMargin {
+  margin-top: 10px;
+}

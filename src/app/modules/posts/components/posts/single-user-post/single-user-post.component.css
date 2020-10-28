@@ -1,0 +1,112 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+#pageView  {
+  display: flex;
+}
+
+.likesWithFullInfoPost {
+  margin-top: 352px;
+  margin-left: 10px;
+}
+
+.likesWithoutPostImg {
+  margin-top: 130px;
+  margin-left: 10px;
+}
+
+.likesWithoutPostTitle {
+  margin-top: 317px;
+  margin-left: 10px;
+}
+
+#postView {
+  background-color: khaki;
+  padding: 10px;
+  width: 310px;
+}
+
+.mat-card-avatar {
+  background-color: khaki;
+  padding: 10px;
+}
+
+#info {
+  display: flex;
+  align-items: flex-start;
+}
+
+.userImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 7px;
+  margin-left: 10px;
+}
+
+.mat-icon-button {
+  outline: none;
+  color: red;
+}
+
+.deleteBtn {
+  margin-left: 232px;
+}
+
+#likes {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mat-card {
+  padding: 0;
+}
+
+.mat-card-title {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+
+.mat-card-subtitle {
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+span {
+  margin-right: 10px;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+h6 {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+}
+
+.mat-mini-fab {
+  outline: none;
+  background-color: lightslategrey;
+}
+
+hr {
+  margin-top: 0;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.postImg {
+  width: 290px;
+  height: 220px;
+}
+
+mat-card-content {
+  margin-bottom: 5px;
+}
+
+h2 {
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}

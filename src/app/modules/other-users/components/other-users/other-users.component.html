@@ -1,0 +1,22 @@
+
+<hr>
+<h6> <b> OTHER USER(S): {{ otherUsers.length }} </b> </h6>
+<hr>
+
+<p> {{ msg }} </p>
+<p *ngIf="!msg && !otherUsers.length"> no other users yet </p>
+
+<div *ngIf="!msg">
+    <app-single-other-user *ngFor="let otherUser of otherUsers"
+                           [otherUser]="otherUser"
+                           [userId]="userId">
+    </app-single-other-user>
+
+    <button class="btn btn-dark btn-sm"
+            *ngIf="url === userUrl"
+            [routerLink]="['/user', userId]">
+      back
+  </button>
+</div>
+
+<router-outlet></router-outlet>

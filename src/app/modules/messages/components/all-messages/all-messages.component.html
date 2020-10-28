@@ -1,0 +1,35 @@
+
+<hr>
+<h6> <b> MESSAGE(S): {{ messages.length }} </b> </h6>
+<hr>
+
+<p *ngIf="!messages.length && !msg"> no messages yet </p>
+
+<p> {{ msg }} </p>
+
+<div *ngIf="messages.length && !msg">
+  <app-single-message *ngFor="let msg of messages"
+                      [msg]="msg"
+                      [pageOwnerId]="pageOwnerId">
+  </app-single-message>
+</div>
+
+<app-add-message></app-add-message>
+
+<button class="btn btn-dark btn-sm"
+        *ngIf="url.includes('friends/send_message_to')"
+        [routerLink]="['/user/', pageOwnerId, 'friends']">
+  back
+</button>
+
+<button class="btn btn-dark btn-sm"
+        *ngIf="url.includes('dialogues/send_message_to')"
+        [routerLink]="['/user/', pageOwnerId, 'dialogues']">
+  back
+</button>
+
+<button class="btn btn-dark btn-sm"
+        *ngIf="url === '/user/' + pageOwnerId + '/friends/' + userId + '/send_message_to/' + userId"
+        [routerLink]="['/user/', pageOwnerId, 'friends', userId]">
+  back
+</button>

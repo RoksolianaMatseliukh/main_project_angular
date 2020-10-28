@@ -1,0 +1,20 @@
+
+<div>
+
+  <img src='{{ userPhoto }}' alt="img">
+  <a [routerLink]="[sentRequest.id]"> {{ sentRequest.name }} {{ sentRequest.surname }} </a>
+
+  <button mat-icon-button
+          (click)="cancelSentRequest()">
+    <mat-icon>cancel</mat-icon>
+  </button>
+
+  <button class="emailIcon"
+          mat-icon-button
+          [routerLink]="['send_message_to', sentRequest.id]"
+          [state]="{friendId: sentRequest.id}">
+    <mat-icon>email</mat-icon>
+  </button>
+
+</div>
+<br>

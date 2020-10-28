@@ -1,0 +1,50 @@
+
+.fullReceivedMsg {
+  display: flex;
+  align-items: center;
+  margin-left: 21.5%;
+}
+
+.receivedMsg {
+  text-align: left;
+  width: 32.5%;
+  padding: 7px 80px 7px 7px;
+  margin-bottom: 7px;
+  word-break: break-all;
+  background-color: #76aab9;
+  border-radius: 20px;
+}
+
+.sentMsg {
+  text-align: right;
+  margin-left: 52.5%;
+  width: 25%;
+  padding: 7px 7px 7px 80px;
+  margin-bottom: 7px;
+  word-break: break-all;
+  background-color: #87c587;
+  border-radius: 20px;
+}
+
+.userImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 7px;
+  margin-left: 10px;
+}
+
+.msgView {
+  display: flex;
+  flex-direction: column;
+}
+
+p {
+  font-size: 15px;
+}
+
+span {
+  color: grey;
+  font-size: 10px;
+}
+

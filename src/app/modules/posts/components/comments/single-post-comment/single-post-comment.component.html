@@ -1,0 +1,27 @@
+
+<div>
+
+  <mat-card class="example-card">
+    <button mat-icon-button
+            *ngIf="pageOwnerId === comment.senderId || pageOwnerId === userId"
+            (click)="removeComment()">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <br *ngIf="pageOwnerId !== comment.senderId || pageOwnerId !== userId">
+
+    <div id="info">
+      <img src='{{ userPhoto }}' alt="img">
+      <div id="info2">
+        <mat-card-title> {{ comment.senderName }} {{ comment.senderSurname }} </mat-card-title>
+        <mat-card-subtitle> {{ comment.time | date:'medium' }} </mat-card-subtitle>
+      </div>
+    </div>
+    <hr>
+
+    <mat-card-content>
+      <p> {{ comment.title }} </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<br>

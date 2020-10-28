@@ -1,0 +1,23 @@
+
+<div>
+
+    <button mat-mini-fab aria-label="Example icon button with a home icon"
+            [routerLink]="['welcome']"
+            [routerLinkActive]="['active-link']"
+            [routerLinkActiveOptions]="{exact: true}">
+      <mat-icon>home</mat-icon>
+    </button>
+
+    <button mat-raised-button class="generalMargin"
+            [routerLink]="['registration']"
+            [routerLinkActive]="['active-link']">
+            REGISTER
+    </button>
+
+    <button mat-raised-button class="margin"
+            [routerLink]="['sign_in']"
+            [routerLinkActive]="['active-link']">
+            SIGN IN
+    </button>
+
+</div>

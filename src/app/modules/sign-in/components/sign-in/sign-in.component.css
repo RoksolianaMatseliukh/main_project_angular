@@ -1,0 +1,45 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+h3 {
+  font-family: 'Caveat', cursive;
+  color: orange;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  color: red;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+
+.mat-flat-button {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  background-color: olive;
+  color: white;
+  outline: none;
+}
+
+mat-icon:hover {
+  cursor: pointer;
+}

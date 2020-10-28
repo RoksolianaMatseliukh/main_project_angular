@@ -1,0 +1,27 @@
+
+<hr>
+<h6> <b> POST(S): {{ posts.length }} </b> </h6>
+<hr>
+
+<div id="pageView">
+  <app-add-post *ngIf="url === userUrl || isFriend || pageOwnerId === userId" [userId]="userId"></app-add-post>
+
+  <div id="secondBlock">
+    <p> {{ msg }} </p>
+    <p *ngIf="!posts.length && !msg"> no posts yet </p>
+
+    <app-single-user-post *ngFor="let post of posts"
+                          [post]="post"
+                          [userId]="userId"
+                          [pageOwnerId]="pageOwnerId"
+                          [isFriend]="isFriend">
+    </app-single-user-post>
+
+  </div>
+</div>
+
+<button class="btn btn-dark btn-sm btnMargin"
+        *ngIf="url === userUrl"
+        [routerLink]="['/user', userId]">
+  back
+</button>

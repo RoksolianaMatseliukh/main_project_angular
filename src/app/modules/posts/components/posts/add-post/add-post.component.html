@@ -1,0 +1,32 @@
+
+<form [formGroup]="form" (ngSubmit)="post()">
+
+    <h2 *ngIf="form.controls.title.invalid && form.controls.img.invalid">
+              <b> fill in at least one field to add new post </b>
+    </h2>
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>title:</mat-label>
+        <input matInput type="text" formControlName="title">
+      </mat-form-field>
+    </div>
+    <br>
+
+    <div>
+      <mat-form-field class="example-full-width">
+        <mat-label>img:</mat-label>
+        <input matInput type="text" formControlName="img">
+      </mat-form-field>
+    </div>
+
+    <button  class="btn btn-dark btn-sm"
+             type="submit"
+             [disabled]="form.controls.title.invalid && form.controls.img.invalid">
+             post
+    </button>
+
+</form>
+
+
+

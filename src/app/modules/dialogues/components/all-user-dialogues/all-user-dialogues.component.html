@@ -1,0 +1,21 @@
+
+<hr>
+<h6> <b> DIALOGUE(S): {{ dialogues.length }} </b> </h6>
+<hr>
+
+<p *ngIf="!dialogues.length && !msg"> no dialogues yet </p>
+
+<p> {{ msg }} </p>
+
+<app-single-user-dialogue *ngFor="let dialogue of dialogues"
+                          [dialogue]="dialogue"
+                          [pageOwnerId]="pageOwnerId">
+</app-single-user-dialogue>
+
+<button class="btn btn-dark btn-sm"
+        *ngIf="url === userUrl"
+        [routerLink]="['/user', pageOwnerId]">
+  back
+</button>
+
+<router-outlet></router-outlet>

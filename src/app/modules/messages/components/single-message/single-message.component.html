@@ -1,0 +1,21 @@
+
+<div class="sentMsg" *ngIf="pageOwnerId !== msg.receiverId">
+  <div class="msgView">
+    <p> {{ msg.body }} </p>
+    <span> {{ msg.time | date:'medium'}} </span>
+  </div>
+</div>
+
+
+<div class="fullReceivedMsg" *ngIf="pageOwnerId === msg.receiverId">
+  <img class="userImg" src='{{ userPhoto }}' alt="img">
+
+  <div class="receivedMsg">
+    <div class="msgView">
+      <p> {{ msg.body }} </p>
+      <span> {{ msg.time | date:'medium'}} </span>
+    </div>
+  </div>
+</div>
+
+

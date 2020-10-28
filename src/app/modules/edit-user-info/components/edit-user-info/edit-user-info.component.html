@@ -1,0 +1,81 @@
+
+<hr>
+<h6> <b> EDITING </b> </h6>
+<hr>
+
+<form [formGroup]="form"
+      (ngSubmit)="updateData()">
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>change name</mat-label>
+      <input matInput type="text" formControlName="changedName">
+    </mat-form-field>
+    <h2 *ngIf="form.get('changedName').hasError('pattern')">
+      <b> enter valid name </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>change surname</mat-label>
+      <input matInput type="text" formControlName="changedSurname">
+    </mat-form-field>
+    <h2 *ngIf="form.get('changedSurname').hasError('pattern')">
+      <b> enter valid surname </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>change date of birth</mat-label>
+      <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="changedBirthday">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <h2 *ngIf="form.controls.changedBirthday.invalid && form.controls.changedBirthday.dirty">
+      <b> enter valid date of birth </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>change photo</mat-label>
+      <input matInput type="text" formControlName="changedPhoto">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>change password</mat-label>
+      <input matInput [type]="hidePass ? 'password' : 'text'" formControlName="changedPassword">
+      <mat-icon matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <h2 *ngIf="form.get('changedPassword').hasError('pattern')">
+      <b> enter valid password </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>confirm your password</mat-label>
+      <input matInput [type]="hideConfirmPass ? 'password' : 'text'" formControlName="confirmPassword">
+      <mat-icon matSuffix (click)="hideConfirmPass = !hideConfirmPass">{{hideConfirmPass ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <h1 *ngIf="incorrectPassConf"> incorrect password confirmation </h1>
+
+  <button mat-fab
+          type="submit"
+          [disabled]="form.invalid">
+    save
+  </button>
+
+</form>
+
+<button class="btn btn-dark btn-sm"
+        *ngIf="url === userUrl"
+        [routerLink]="['/user', pageOwnerId]">
+  back
+</button>

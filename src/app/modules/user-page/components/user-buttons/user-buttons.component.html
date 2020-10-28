@@ -1,0 +1,58 @@
+
+<div>
+
+  <p
+          *ngIf="url === userUrl || pageOwnerId === user.id"
+          [routerLink]="['edit']"
+          [state]="{user: user, userId: user.id}"
+          [routerLinkActive]="['active-link']"
+          [routerLinkActiveOptions]="{exact: true}">
+    edit page
+  </p>
+
+  <p
+          *ngIf="url === userUrl || pageOwnerId === user.id"
+          [routerLink]="['dialogues']"
+          [routerLinkActive]="['active-link']">
+    dialogue(s) - {{ numOfDialogues }}
+  </p>
+
+  <p
+          [routerLink]="['posts']"
+          [state]="{userId: user.id}"
+          [routerLinkActive]="['active-link']">
+    post(s) - {{ numOfPosts }}
+  </p>
+
+  <p
+          [routerLink]="['friends']"
+          [state]="{userId: user.id}"
+          [routerLinkActive]="['active-link']">
+    friend(s) - {{ numOfFriends }}
+  </p>
+
+  <p class="btnMargin"
+          *ngIf="url === userUrl || pageOwnerId === user.id"
+          [routerLink]="['sent_requests']"
+          [state]="{userId: user.id}"
+          [routerLinkActive]="['active-link']">
+    sent friend request(s) - {{ numOfSentReq }}
+  </p>
+
+  <p
+          *ngIf="url === userUrl || pageOwnerId === user.id"
+          [routerLink]="['received_requests']"
+          [state]="{userId: user.id}"
+          [routerLinkActive]="['active-link']">
+    received friend request(s) - {{ numOfReceivedReq }}
+  </p>
+
+  <p
+          *ngIf="url === userUrl || pageOwnerId === user.id"
+          [routerLink]="['other_users']"
+          [state]="{userId: user.id}"
+          [routerLinkActive]="['active-link']">
+    other user(s) - {{ numOfOtherUsers }}
+  </p>
+
+</div>

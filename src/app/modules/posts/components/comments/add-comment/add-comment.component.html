@@ -1,0 +1,17 @@
+
+<div>
+  <form [formGroup]="form" (ngSubmit)="comment()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>leave comment</mat-label>
+        <textarea matInput placeholder="Ex. It makes me feel..." formControlName="title"></textarea>
+      </mat-form-field>
+
+      <button class="btn btn-dark btn-sm"
+              type="submit"
+              [disabled]="form.invalid">
+              comment
+      </button>
+
+  </form>
+</div>

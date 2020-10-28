@@ -1,0 +1,17 @@
+
+<div>
+
+  <h6> <b> COMMENT(S): {{ comments.length }} </b> </h6>
+  <p> {{ msg }} </p>
+
+  <app-single-post-comment *ngFor="let comment of comments"
+                           [comment]="comment"
+                           [userId]="userId">
+  </app-single-post-comment>
+
+  <app-add-comment *ngIf="url === userUrl || isFriend || pageOwnerId === userId"
+                   [userId]="userId"
+                   [postId]="postId">
+  </app-add-comment>
+
+</div>

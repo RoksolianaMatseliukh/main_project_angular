@@ -1,0 +1,19 @@
+
+<div class="dialogueView"
+     [routerLink]="['send_message_to', dialogue.userId]"
+     [state]="{friendId: dialogue.userId}"
+     [routerLinkActive]="['active-link']"
+     [routerLinkActiveOptions]="{exact: true}">
+
+  <img src='{{ userPhoto }}' alt="img">
+
+  <div class="dialogueInfo">
+    <h3> {{ dialogue.userName }} {{ dialogue.userSurname }} </h3>
+    <div class="dialogueBody">
+      <p> {{ dialogue.body | messagePipe }} </p>
+      <span> &middot; {{ dialogue.time | date: 'MMM d' }} </span>
+    </div>
+  </div>
+
+</div>
+

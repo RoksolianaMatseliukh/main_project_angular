@@ -1,0 +1,37 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.deleteIcon {
+  outline: none;
+  color: red;
+}
+
+.emailIcon {
+  outline: none;
+  color: steelblue;
+}
+
+img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
+}
+
+a {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: darkslateblue;
+}
+
+

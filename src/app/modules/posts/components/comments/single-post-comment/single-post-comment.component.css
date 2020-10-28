@@ -1,0 +1,43 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.example-card {
+  background-color: darkkhaki;
+  width: 200px;
+}
+
+.mat-icon-button {
+  outline: none;
+  color: red;
+  margin-left: 146px;
+}
+
+.mat-card {
+  padding: 0 10px 10px 10px;
+}
+
+.mat-card-title {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+}
+
+.mat-card-subtitle {
+  font-size: 11px;
+  margin-bottom: 7px;
+}
+
+img {
+  width: 33px;
+  height: 33px;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+
+#info {
+  display: flex;
+  align-items: flex-start;
+}
+
+hr {
+  margin-top: 0;
+}

@@ -1,0 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.generalMargin {
+  margin-left: 75%;
+}
+
+.margin {
+  margin-left: 7px;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.mat-mini-fab, .mat-raised-button {
+  font-family: 'Caveat', cursive;
+  outline: none;
+  color: #9999FF;
+  background-color: white;
+}
+
+.active-link {
+  color: white;
+  background-color: #9999FF;
+}
+
+

@@ -1,0 +1,21 @@
+
+<hr>
+<h6> <b> FRIEND(S): {{ friends.length }} </b> </h6>
+<hr>
+
+<p> {{ msg }} </p>
+<p *ngIf="!friends.length && !msg"> no friends yet </p>
+
+<app-single-friend *ngFor="let friend of friends"
+                   [friend]="friend"
+                   [userId]="userId"
+                   [pageOwnerId]="pageOwnerId">
+</app-single-friend>
+
+<button class="btn btn-dark btn-sm"
+        *ngIf="url === userUrl"
+        [routerLink]="['/user', userId]">
+        back
+</button>
+
+<router-outlet> </router-outlet>

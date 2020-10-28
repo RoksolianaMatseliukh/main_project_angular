@@ -1,0 +1,24 @@
+
+<div>
+
+  <img src='{{ userPhoto }}' alt="img">
+  <a [routerLink]="[request.id]"> {{ request.name }} {{ request.surname }} </a>
+
+  <button mat-icon-button class="firstIcon"
+          (click)="removeRequest()">
+    <mat-icon>person_add_disabled</mat-icon>
+  </button>
+
+  <button mat-icon-button class="secondIcon"
+          (click)="confirmRequest()">
+    <mat-icon>person_add</mat-icon>
+  </button>
+
+  <button class="emailIcon"
+          mat-icon-button
+          [routerLink]="['send_message_to', request.id]"
+          [state]="{friendId: request.id}">
+    <mat-icon>email</mat-icon>
+  </button>
+</div>
+<br>

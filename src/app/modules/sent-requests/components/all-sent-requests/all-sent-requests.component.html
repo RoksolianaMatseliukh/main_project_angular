@@ -1,0 +1,21 @@
+
+<hr>
+<h6>  <b> SENT REQUEST(S): {{ sentRequests.length }} </b> </h6>
+<hr>
+
+<p> {{ msg }} </p>
+<p *ngIf="!sentRequests.length && !msg"> no requests yet </p>
+
+<app-single-sent-request *ngFor="let sentRequest of sentRequests"
+                             [sentRequest]="sentRequest"
+                             [userId]="userId"
+                             [pageOwnerId]="pageOwnerId">
+</app-single-sent-request>
+
+<button class="btn btn-dark btn-sm"
+        *ngIf="url === userUrl"
+        [routerLink]="['/user', userId]">
+        back
+</button>
+
+<router-outlet></router-outlet>

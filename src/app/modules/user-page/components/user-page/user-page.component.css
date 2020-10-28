@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+img {
+  margin-left: 100px;
+  margin-right: 110px;
+  width: 250px;
+  height: 250px;
+  transition: 0.8s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
+}
+
+span {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+}
+
+h4 {
+  font-family: 'Caveat', cursive;
+  font-size: 35px;
+  padding: 7px;
+  margin-bottom: 0;
+  text-align: center;
+  background: linear-gradient(to right, orange, #0000CD);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pageView {
+  padding: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.pageInfo {
+  display: flex;
+}
+
+.mat-slider-horizontal {
+  width: 110px;
+  min-width: 0;
+}
+
+mat-card {
+  width: 120px;
+  height: 60px;
+  padding: 5px;
+}
+
+h5 {
+  font-family: 'Caveat', cursive;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.sliderView {
+  display: flex;
+  justify-content: flex-end;
+}
+
+mat-icon {
+  margin-top: 7px;
+}
+
+.aboutUser {
+  margin-right: 300px;
+}
+
+.background {
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.msg {
+  text-align: center;
+  margin-top: 100px;
+}
+
+mat-spinner {
+  margin-top: 15%;
+  margin-left: 45%;
+}
+
+.emailIcon {
+  outline: none;
+  color: steelblue;
+}
+
+.logOut {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  color: #76aab9;
+  width: 35px;
+  height: 35px;
+  margin-left: 97%;
+  margin-bottom: 15px;
+  cursor: pointer;
+}

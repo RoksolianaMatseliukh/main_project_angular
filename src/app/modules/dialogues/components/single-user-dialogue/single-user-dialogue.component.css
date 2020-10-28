@@ -1,0 +1,53 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+.dialogueView {
+  display: flex;
+  cursor: pointer;
+  width: 20%;
+  outline: none;
+}
+
+.dialogueInfo {
+  margin-left: 5px;
+}
+
+img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  transition: 0.8s;
+}
+
+h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  margin-bottom: 0;
+}
+
+.dialogueBody {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  color: grey;
+  font-size: 12px;
+}
+
+span {
+  color: grey;
+  font-size: 10px;
+}
+
+.active-link {
+  border: 1px solid purple;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+

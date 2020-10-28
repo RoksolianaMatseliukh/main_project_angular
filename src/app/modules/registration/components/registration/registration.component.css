@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+h3, h2 {
+  font-family: 'Caveat', cursive;
+  color: orange;
+}
+
+h1 {
+  font-family: 'Caveat', cursive;
+  color: red;
+}
+
+form {
+  text-align: center;
+}
+
+.mat-flat-button {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  background-color: olive;
+  color: white;
+  outline: none;
+}
+
+.saveBtn {
+  background-color: darkolivegreen;
+  margin-right: 7px;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+::ng-deep.man.mat-accent .mat-radio-inner-circle {
+  background-color: blue!important;   /*inner circle color change*/
+}
+
+::ng-deep.man.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+  border-color:blue!important; /*outer ring color change*/
+}
+
+mat-icon:hover {
+  cursor: pointer;
+}
+

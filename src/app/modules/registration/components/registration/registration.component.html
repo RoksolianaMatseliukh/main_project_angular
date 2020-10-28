@@ -1,0 +1,103 @@
+
+<hr>
+<form [formGroup]="form" (ngSubmit)="saveUser()">
+
+  <h3 *ngIf="form.get('name').hasError('required') ||
+             form.get('surname').hasError('required') ||
+             form.get('sex').hasError('required') ||
+             form.get('birthday').hasError('required') ||
+             form.get('login').hasError('required') ||
+             form.get('password').hasError('required') ||
+             form.get('confirmPassword').hasError('required')">
+    <b> FILL ALL FIELDS </b>
+  </h3>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>enter your name</mat-label>
+      <input matInput type="text" formControlName="name">
+    </mat-form-field>
+    <h2 *ngIf="form.get('name').hasError('pattern')">
+      <b> enter valid name </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>enter your surname</mat-label>
+      <input matInput type="text" formControlName="surname">
+    </mat-form-field>
+    <h2 *ngIf="form.get('surname').hasError('pattern')">
+      <b> enter valid surname </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-radio-group aria-label="Select an option" formControlName="sex">
+      <mat-radio-button value="man" class="man">man</mat-radio-button>
+      <mat-radio-button value="woman">woman</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>choose date of birth</mat-label>
+      <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" formControlName="birthday">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <h2 *ngIf="form.controls.birthday.invalid && form.controls.birthday.dirty">
+      <b> enter valid date of birth </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>enter your login</mat-label>
+      <input matInput type="text" formControlName="login">
+    </mat-form-field>
+    <h2 *ngIf="form.get('login').hasError('minlength')">
+      <b> enter valid login </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>enter your password</mat-label>
+      <input matInput [type]="hidePass ? 'password' : 'text'" formControlName="password">
+      <mat-icon matSuffix (click)="hidePass = !hidePass">{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <h2 *ngIf="form.get('password').hasError('pattern')">
+      <b> enter valid password </b>
+    </h2>
+  </div>
+
+  <div>
+    <mat-form-field appearance="fill">
+      <mat-label>confirm your password</mat-label>
+      <input matInput [type]="hidePassConfirm ? 'password' : 'text'" formControlName="confirmPassword">
+      <mat-icon matSuffix (click)="hidePassConfirm = !hidePassConfirm">{{hidePassConfirm ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+  </div>
+
+  <h1 *ngIf="warning"> such user with this login already exists </h1>
+  <h1 *ngIf="warningPassConf"> incorrect password confirmation </h1>
+
+  <button mat-flat-button
+          class="saveBtn"
+          type="submit"
+          [disabled]="form.invalid">
+    save
+  </button>
+
+  <button mat-flat-button
+          type="button"
+          *ngIf="lastRegisteredUserId"
+          (click)="logIn()">
+    log in
+  </button>
+
+</form>
+
+<app-all-users id="secondBlock"></app-all-users>
+

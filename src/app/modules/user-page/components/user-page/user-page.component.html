@@ -1,0 +1,66 @@
+
+<div class="spinner" *ngIf="!user || !showPage">
+  <hr>
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="user"
+     [ngStyle]="{display: !showPage ?'none' :'block'}">
+  <hr>
+
+  <img class="logOut"
+       src="/assets/logout.png" alt="logout"
+       *ngIf="url === userUrl || pageOwnerId === user.id"
+       (click)="logOut()">
+
+  <div class="sliderView" *ngIf="url === userUrl">
+    <mat-card class="example-result-card">
+      <h5>choose color for page</h5>
+
+      <mat-slider class="example-margin" [(ngModel)]="value"> </mat-slider>
+    </mat-card>
+  </div>
+  <br>
+
+  <div class="background"
+       [ngStyle]="{backgroundColor: url === userUrl || pageOwnerId === user.id ?'rgba(' + (value.toString().split('').reverse().join('') + 150) + ', ' + (value + 150) + ', ' + (150 - value) + ', '+ 0.3 + ')' :'white'}">
+    <h4 *ngIf="url === userUrl || pageOwnerId === user.id"> ------------------ My page ------------------ </h4>
+
+    <div class="pageView">
+
+      <img *ngIf="!user.img" src="/assets/no-avatar.png" alt="photo">
+      <img *ngIf="user.img" src='{{ user.img }}' alt="photo">
+
+      <div class="pageInfo">
+
+        <div class="aboutUser">
+          name: <span> {{ user.name }} </span>
+
+          <button class="emailIcon"
+                  mat-icon-button
+                  *ngIf="url !== userUrl && pageOwnerId !== user.id"
+                  [routerLink]="['send_message_to', user.id]"
+                  [state]="{friendId: user.id}">
+            <mat-icon>email</mat-icon>
+          </button> <br>
+
+          surname: <span> {{ user.surname }} </span> <br>
+          sex: <span> {{ user.sex }} </span> <br>
+          age: <span> {{ user.age }} </span> <br>
+          <mat-icon>cake</mat-icon> <span> {{ user.birthday }} </span> <br>
+
+        </div>
+
+        <app-user-buttons [url]="url"
+                          [userUrl]="userUrl"
+                          [user]="user"
+                          (showPage)="showPage = $event">
+        </app-user-buttons>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,72 @@
+<div id="pageView">
+
+  <div id="postView">
+
+    <mat-card class="example-card">
+      <button mat-icon-button class="deleteBtn"
+              *ngIf="pageOwnerId === post.senderId || pageOwnerId === userId"
+              (click)="removeFullPostInfo()">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <br *ngIf="pageOwnerId !== post.senderId || pageOwnerId !== userId">
+
+      <div id="info">
+        <img class="userImg" src='{{ userPhoto }}' alt="img">
+        <div id="info2">
+          <mat-card-title> {{ post.senderName }} {{ post.senderSurname }} </mat-card-title>
+          <mat-card-subtitle> {{ post.time | date:'medium' }} </mat-card-subtitle>
+        </div>
+      </div>
+      <hr>
+
+      <h2> {{ post.title }} </h2>
+      <mat-card-content>
+        <img class="postImg"
+             *ngIf="post.img"
+             src='{{ post.img  }}'
+             alt="post_img">
+      </mat-card-content>
+
+      <div id="likes">
+        <button mat-icon-button
+                *ngIf="!arrOfLikes.includes(pageOwnerId)"
+                (click)="like()">
+          <mat-icon>favorite_border</mat-icon>
+        </button>
+
+        <button mat-icon-button
+                *ngIf="arrOfLikes.includes(pageOwnerId)"
+                (click)="dislike()">
+          <mat-icon>favorite</mat-icon>
+        </button>
+
+        <span (click)="isLikesShowed()"> {{ arrOfLikes.length }} </span>
+      </div>
+    </mat-card>
+
+    <app-all-post-comments [postId]="post.id"
+                           [userId]="userId"
+                           [userUrl]="userUrl"
+                           [isFriend]="isFriend"
+                           [pageOwnerId]="pageOwnerId">
+    </app-all-post-comments>
+
+  </div>
+
+  <div [ngClass]="{likesWithFullInfoPost: post.img && post.title,
+                   likesWithoutPostTitle: post.img && !post.title,
+                   likesWithoutPostImg: !post.img && post.title}"
+       *ngIf="showLikes">
+    <p> {{ msg }} </p>
+
+    <div *ngIf="usersWhoLikedPost.length && !msg">
+      <h6 *ngFor="let postLiker of usersWhoLikedPost"> {{ postLiker.name }} {{ postLiker.surname }} </h6>
+    </div>
+
+    <h6 *ngIf="!usersWhoLikedPost.length && !msg"> no likes </h6>
+
+    <button mat-mini-fab (click)="showLikes = false">hide</button>
+  </div>
+
+</div>
+<br>

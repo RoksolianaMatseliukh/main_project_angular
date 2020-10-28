@@ -1,0 +1,27 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
+
+p {
+  font-family: 'Caveat', cursive;
+  font-size: 22px;
+  color: #479193;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+
+.btnMargin {
+  margin-top: 30px;
+}
+
+.active-link {
+  color: #2a5f5f;
+  font-size: 27px;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+}
+

@@ -1,0 +1,7 @@
+
+<hr>
+<p> all user(s): {{ users.length }} </p>
+<hr>
+
+<p> {{ msg }} </p>
+<app-single-user *ngFor="let user of users" [user]="user"></app-single-user>

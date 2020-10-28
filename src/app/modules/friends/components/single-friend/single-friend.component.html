@@ -1,0 +1,22 @@
+<div>
+
+  <img src='{{ userPhoto }}' alt="img">
+  <a [routerLink]="[friend.id]"> {{ friend.name }} {{ friend.surname }} </a>
+
+  <button class="deleteIcon"
+          mat-icon-button
+          *ngIf="url.includes(userUrl)"
+          (click)="removeFriend()">
+    <mat-icon>delete</mat-icon>
+  </button>
+
+  <button class="emailIcon"
+          mat-icon-button
+          *ngIf="url.includes(userUrl)"
+          [routerLink]="['send_message_to', friend.id]"
+          [state]="{friendId: friend.id}">
+    <mat-icon>email</mat-icon>
+  </button>
+
+</div>
+<br>
