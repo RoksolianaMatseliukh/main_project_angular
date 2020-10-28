@@ -56,11 +56,12 @@ export class OtherUsersComponent implements OnInit, OnDestroy {
 
     this.getAllUsersService.getAllUsers()
       .subscribe(data => {
+        this.otherUsers = [];
         if (!data) {
           this.msg = null;
           return;
         }
-        this.otherUsers = [];
+
         Object.entries(data).forEach(([id, user]) => {
           const {name, surname} = user;
           this.otherUsers.push({id, name, surname});
